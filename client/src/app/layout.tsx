@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="w-full flex justify-center h-screen max-h-screen md:p-5 bg-white dark:bg-black">
+      <body className="w-full flex justify-center h-dvh max-h-screen md:p-5 bg-white dark:bg-black">
         <AuthProvider>
           <ThemeProviders>
             <div className="w-full max-w-7xl flex flex-col text-black dark:text-white md:shadow-2xl md:rounded-lg md:border-2">
