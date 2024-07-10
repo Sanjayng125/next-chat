@@ -29,7 +29,7 @@ export const GET = async (req: NextRequest) => {
             const searchQuery = queryParams.get("search") || ""
 
             if (searchQuery === "") {
-                const users = await UserModel.find().select("username avatar.url")
+                const users = await UserModel.find({ _id: { $ne: session.user._id }, }).select("username avatar.url")
                 return Response.json({ success: true, message: "", users }, { status: 200 })
             }
 
