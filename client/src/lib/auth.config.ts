@@ -29,7 +29,8 @@ export const authConfig: NextAuthConfig = {
             const user = auth?.user
 
             const isOnProfilePage = request.nextUrl?.pathname?.startsWith("/profile");
-            const isOnLoginPage = request.nextUrl?.pathname?.startsWith("/login");
+            const isOnSignInPage = request.nextUrl?.pathname?.startsWith("/sign-in");
+            const isOnSignUpPage = request.nextUrl?.pathname?.startsWith("/sign-up");
 
             // ONLY AUTHENTICATED USERS CAN REACH PROFILE PAGE
             if ((isOnProfilePage) && !user) {
@@ -37,7 +38,7 @@ export const authConfig: NextAuthConfig = {
             }
 
             // ONLY UNAUTHENTICATED USERS CAN REACH LOGIN PAGE
-            if (isOnLoginPage && user) {
+            if ((isOnSignInPage || isOnSignUpPage) && user) {
                 return Response.redirect(new URL("/", request.nextUrl));
             }
 
