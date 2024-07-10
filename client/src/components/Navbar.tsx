@@ -33,14 +33,16 @@ export default function Navbar() {
               </NavigationMenuTrigger>
               <NavigationMenuContent className="flex flex-col items-center gap-1 p-2">
                 <ThemeSwitch />
-                <CreateGroupModel />
                 {session?.user && (
-                  <button
-                    onClick={logout}
-                    className="w-full bg-red-600 text-white rounded hover:underline p-1"
-                  >
-                    Sign Out
-                  </button>
+                  <>
+                    <CreateGroupModel />
+                    <button
+                      onClick={logout}
+                      className="w-full bg-red-600 text-white rounded hover:underline p-1"
+                    >
+                      Sign Out
+                    </button>
+                  </>
                 )}
               </NavigationMenuContent>
             </NavigationMenuItem>
