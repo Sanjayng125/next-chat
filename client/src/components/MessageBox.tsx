@@ -58,7 +58,7 @@ export default function MessageBox({
       </div>
 
       {/* messages */}
-      <section className="h-[calc(100%-128px)] text-balance overflow-x-hidden overflow-y-auto">
+      <section className="h-[calc(100%-116px)] text-balance overflow-x-hidden overflow-y-auto">
         <div className="flex flex-col gap-2 py-2 mx-2">
           {messages?.length > 0 &&
             messages.map((message, index) => (
@@ -154,7 +154,7 @@ export default function MessageBox({
       </section>
 
       {/* Input */}
-      <div className="w-full h-[62px] bg-white dark:bg-black p-2 pt-0 flex items-center box-border gap-2">
+      <div className="w-full h-min bg-white dark:bg-black p-2 pt-0 flex items-center box-border gap-2">
         <Input
           className="flex-1 outline-none focus-visible:ring-0 text-xl"
           placeholder="Message"

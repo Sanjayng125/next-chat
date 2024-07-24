@@ -18,7 +18,7 @@ export default function ChatBox() {
     onlineUsers,
   } = useMyStore();
   const { data: session } = useSession();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchMyChats = async () => {
     try {
@@ -43,7 +43,9 @@ export default function ChatBox() {
     <>
       <Search />
       <div className="w-full h-[calc(100vh-164px)] overflow-y-auto">
-        {loading && <Loader2 className="w-10 h-10 mx-auto animate-spin" />}
+        {loading && myChats?.length === 0 && (
+          <Loader2 className="w-10 h-10 mx-auto animate-spin" />
+        )}
         {!loading && (!myChats || myChats?.length <= 0) && (
           <div className="w-full flex items-center justify-center px-3">
             <p className="text-center text-gray-500 font-semibold">
